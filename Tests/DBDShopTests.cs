@@ -15,11 +15,12 @@ namespace Tests
             Client client= new Client("JpczLFGlL0", "JpczLFGlL0", "TjTWsNqWOZ");
             //Get all the existing products
             List<Product> products = client.GetProducts();
+            
             //Delete all the products
-            client.DeleteProducts(products);
+           client.DeleteProducts(products);
             //Check we deleted all the products
-            products = client.GetProducts();
-            Assert.IsTrue(products.Count == 0);
+           products = client.GetProducts();
+           Assert.IsTrue(products.Count == 0);
 
             //Insert test data
             client.InsertTestData();

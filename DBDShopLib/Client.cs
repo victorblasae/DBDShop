@@ -25,15 +25,16 @@ namespace DBDShopLib
 
         public void InsertTestData()
         {
-            string query = "CREATE TABLE IF NOT EXISTS Products (Id int,Name TEXT)";
+            string query = "CREATE TABLE IF NOT EXISTS Products (Id int,descrpcion TEXT, stock int)";
             MySqlCommand cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
-            query = "INSERT INTO Products VALUES(1,'Nocilla');";
+            query = "INSERT INTO Products(descripcion, stock) VALUES('Nocilla', 1);";
             cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
-            query = "INSERT INTO Products VALUES(2,'Patata');";
+            query = "INSERT INTO Products(descripcion, stock) VALUES('Patata', 1);";
             cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
+            
         }
 
         public List<Product> GetProducts()
