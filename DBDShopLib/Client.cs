@@ -40,7 +40,7 @@ namespace DBDShopLib
         {
             List<Product> products = new List<Product>();
 
-            string query = "SELECT Id,Name FROM Products";
+            string query = "SELECT Id, descripcion, stock FROM Products";
             MySqlCommand cmd = new MySqlCommand(query, m_connection);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -52,7 +52,7 @@ namespace DBDShopLib
                 Product product = new Product();
                 product.Id = id;
                 product.descripcion= descripcion; 
-               product.stock= stock;
+                product.stock= stock;
                 products.Add(product);
             }
             reader.Close();
