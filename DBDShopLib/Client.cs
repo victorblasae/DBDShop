@@ -47,10 +47,12 @@ namespace DBDShopLib
             {
                 
                 int id= int.Parse(reader.GetValue(0).ToString());
-                string name = reader.GetValue(1).ToString();
+                string descrpcion = reader.GetValue(1).ToString();
+                int stock = int.Parse(reader.GetValue(2).ToString());
                 Product product = new Product();
                 product.Id = id;
-                product.Name = name;
+                product.descripcion= descripcion; 
+               product.stock= stock;
                 products.Add(product);
             }
             reader.Close();
