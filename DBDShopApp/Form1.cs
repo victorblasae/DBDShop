@@ -17,7 +17,7 @@ namespace DBDShopApp
         {
             InitializeComponent();
 
-            m_client = new Client("NLphb4HrH0", "NLphb4HrH0", "VM8GYV3qZ7");
+            m_client = new Client("JpczLFGlL0", "JpczLFGlL0", "TjTWsNqWOZ");
             textBox1.Text = "Connected to database";
         }
 
@@ -35,7 +35,7 @@ namespace DBDShopApp
             listBox1.Items.Clear();
             foreach (Product product in products)
             {
-                listBox1.Items.Add(product.Name);
+                listBox1.Items.Add(product.descripcion);
             }
         }
     }

@@ -11,7 +11,7 @@ namespace DBDShopLib
     public class Client
     {
         MySqlConnection m_connection = null;
-        
+
         public Client(string databasename , string username , string password , string server= "remotemysql.com")
         {
             m_connection = new MySqlConnection();
@@ -25,13 +25,13 @@ namespace DBDShopLib
 
         public void InsertTestData()
         {
-            string query = "CREATE TABLE IF NOT EXISTS Products (Id int,descrpcion TEXT, stock int)";
+            string query = "CREATE TABLE IF NOT EXISTS producto (Id int,descripcion TEXT, stock int)";
             MySqlCommand cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
-            query = "INSERT INTO Products(descripcion, stock) VALUES('Nocilla', 1);";
+            query = "INSERT INTO producto(descripcion, stock) VALUES('Nocilla', 1);";
             cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
-            query = "INSERT INTO Products(descripcion, stock) VALUES('Patata', 1);";
+            query = "INSERT INTO producto(descripcion, stock) VALUES('Patata', 1);";
             cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
             
@@ -41,14 +41,14 @@ namespace DBDShopLib
         {
             List<Product> products = new List<Product>();
 
-            string query = "SELECT Id, descripcion, stock FROM Products";
+            string query = "SELECT Id, descripcion, stock FROM producto";
             MySqlCommand cmd = new MySqlCommand(query, m_connection);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 
                 int id= int.Parse(reader.GetValue(0).ToString());
-                string descrpcion = reader.GetValue(1).ToString();
+                string descripcion = reader.GetValue(1).ToString();
                 int stock = int.Parse(reader.GetValue(2).ToString());
                 Product product = new Product();
                 product.Id = id;
@@ -64,7 +64,7 @@ namespace DBDShopLib
         {
             foreach(Product product in products)
             {
-                string query = "DELETE FROM Producto WHERE Id =" + product.Id + ";";
+                string query = "DELETE FROM producto WHERE Id =" + product.Id + ";";
                 MySqlCommand cmd = new MySqlCommand(query, m_connection);
                 cmd.ExecuteNonQuery();
             }
