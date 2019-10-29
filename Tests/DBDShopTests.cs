@@ -12,7 +12,7 @@ namespace Tests
         public void AddAndTestData()
         {
             //Connect to the test database
-            Client client= new Client("NLphb4HrH0", "NLphb4HrH0", "VM8GYV3qZ7");
+            Client client= new Client("JpczLFGlL0", "JpczLFGlL0", "TjTWsNqWOZ");
             //Get all the existing products
             List<Product> products = client.GetProducts();
             //Delete all the products
