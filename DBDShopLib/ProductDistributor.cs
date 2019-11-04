@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace DBDShopLib
 {
-    public class Product
+    public class ProductDistributor
     {
-        public int Id = 0;
-        public int stock= 0;
-        public string descripcion = null;
+        public String CIF;
+        public int idProducto;
         public float precio;
+
+        public ProductDistributor()
+        {
+        }
     }
+
 }

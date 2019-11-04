@@ -62,7 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Distributor.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductDistributor.cs" />
+    <Compile Include="ProductOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
