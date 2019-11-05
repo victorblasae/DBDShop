@@ -201,9 +201,9 @@ namespace DBDShopLib
             }
         }
 
-        public void addNewProduct (int id, int stock, string descripcion, float precio)
+        public void addNewProduct (string descripcion, int stock, float precio)
         {
-            string query = "INSERT INTO producto VALUES(" + id + "," + stock + "," + descripcion + "," + precio + ");";
+            string query = "INSERT INTO producto (descripcion, stock, precio) VALUES('"+ descripcion + "'," + stock + "," + precio + ");";
             MySqlCommand cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
         }

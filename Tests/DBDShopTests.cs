@@ -27,6 +27,13 @@ namespace Tests
             //Check they were correctly inserted
             products = client.GetProducts();
             Assert.IsTrue(products.Count == 2);
+
+            //addNewProduct
+            client.addNewProduct( "Pera", 7, 1);
+            //Check correctly created
+            products = client.GetProducts();
+            Assert.IsTrue(products.Count == 3);
+
         }
         [TestMethod]
         public void MyOhterTest()
