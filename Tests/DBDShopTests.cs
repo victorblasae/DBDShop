@@ -29,10 +29,12 @@ namespace Tests
             Assert.IsTrue(products.Count == 2);
 
             //addNewProduct
-            client.addNewProduct( "Pera", 7, 1);
+            client.addNewProduct( "Pera", 0, 1);
             //Check correctly created
             products = client.GetProducts();
             Assert.IsTrue(products.Count == 3);
+            products = client.getSoldOut();
+            Assert.IsTrue(products.Count == 1);
 
         }
         [TestMethod]

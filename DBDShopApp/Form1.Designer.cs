@@ -44,7 +44,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(157, 95);
+            this.button2.Location = new System.Drawing.Point(167, 95);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 39);
             this.button2.TabIndex = 2;
@@ -64,11 +64,12 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 25);
+            this.textBox1.Location = new System.Drawing.Point(26, 28);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(405, 52);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
@@ -81,6 +82,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -207,5 +207,22 @@ namespace DBDShopLib
             MySqlCommand cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
         }
+
+        public List<Product> getSoldOut()
+        {
+            List<Product> products = new List<Product>();
+
+            for(int i = 0; i<GetProducts().Count; i++)
+            {
+                if (GetProducts().ElementAt<Product>(i).stock == 0)
+                {
+                    products.Add(GetProducts().ElementAt<Product>(i));
+                }
+               
+            }
+
+            return products;
+
+        }
     }
 }
