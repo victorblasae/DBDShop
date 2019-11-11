@@ -224,5 +224,21 @@ namespace DBDShopLib
             return products;
 
         }
+       /* public void addOrder(String DNI, int idProducto, int articulos)
+        {
+            Order order = new Order();
+            order.DNI = DNI;
+            ProductOrder productOrder = new ProductOrder();
+            productOrder.idPedido = order.id;
+            productOrder.idProducto = idProducto;
+            productOrder.articulos = articulos;
+            String query = "INSERT INTO Pedido(DNI, fecha) VALUES('"+ DNI + "'," + 2019/11/11 11:57:00 + ");";
+            MySqlCommand cmd = new MySqlCommand(query, m_connection);
+            cmd = new MySqlCommand(query, m_connection);
+            cmd.ExecuteNonQuery();
+            query = "INSERT INTO Producto_Pedido(idProducto, idPedido, articulos) VALUES(" + idProducto + "," + order.id + ", " + articulos + ");";
+            cmd = new MySqlCommand(query, m_connection);
+            cmd.ExecuteNonQuery();
+        }*/
     }
 }

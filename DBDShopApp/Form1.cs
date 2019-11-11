@@ -48,5 +48,15 @@ namespace DBDShopApp
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<Product> products = m_client.getSoldOut();
+            listBox1.Items.Clear();
+            foreach (Product product in products)
+            {
+                listBox1.Items.Add(product.descripcion);
+            }
+        }
     }
 }
