@@ -116,6 +116,7 @@ namespace DBDShopLib
             reader.Close();
             return distributors;
         }
+        // Obtiene los pedidos(Relaciona el id del order con el DNI del customer 
 
         public List<Order> GetOrders()
         {
@@ -141,6 +142,7 @@ namespace DBDShopLib
             return orders;
         }
 
+        //Obtiene el id del product con el id del order
         public List<ProductOrder> GetProductOrders()
         {
             List<ProductOrder> productOrders = new List<ProductOrder>();
@@ -164,7 +166,8 @@ namespace DBDShopLib
             reader.Close();
             return productOrders;
         }
-
+        
+        //Obtiene los productos con su distribuidor
         public List<ProductDistributor> GetProductDistributors()
         {
          
@@ -207,7 +210,8 @@ namespace DBDShopLib
             MySqlCommand cmd = new MySqlCommand(query, m_connection);
             cmd.ExecuteNonQuery();
         }
-
+       
+        //Obtiene los agotados
         public List<Product> getSoldOut()
         {
             List<Product> products = new List<Product>();
@@ -224,21 +228,39 @@ namespace DBDShopLib
             return products;
 
         }
+
+        //Da error
+
        /* public void addOrder(String DNI, int idProducto, int articulos)
         {
+            Boolean existe = false;
+            while (existe) { 
+            for(int i = 0; i<GetCustomers().Count; i++)
+            {
+                if(GetCustomers().ElementAt(i).DNI == DNI)
+                    {
+                        existe = true;
+                    }
+            }
+            }
+            if(existe == false)
+            {
+                string query = "INSERT INTO cliente (DNI) VALUES('" + DNI + "');";
+                MySqlCommand cmd = new MySqlCommand(query, m_connection);
+                cmd.ExecuteNonQuery();
+           }
             Order order = new Order();
             order.DNI = DNI;
             ProductOrder productOrder = new ProductOrder();
             productOrder.idPedido = order.id;
             productOrder.idProducto = idProducto;
             productOrder.articulos = articulos;
-            String query = "INSERT INTO Pedido(DNI, fecha) VALUES('"+ DNI + "'," + 2019/11/11 11:57:00 + ");";
-            MySqlCommand cmd = new MySqlCommand(query, m_connection);
-            cmd = new MySqlCommand(query, m_connection);
-            cmd.ExecuteNonQuery();
-            query = "INSERT INTO Producto_Pedido(idProducto, idPedido, articulos) VALUES(" + idProducto + "," + order.id + ", " + articulos + ");";
-            cmd = new MySqlCommand(query, m_connection);
-            cmd.ExecuteNonQuery();
+            String query1 = "INSERT INTO pedido(DNI, fecha) VALUES('"+ DNI + "', '2019-11-12' );";
+            MySqlCommand cmd1 = new MySqlCommand(query1, m_connection);
+            cmd1.ExecuteNonQuery();
+            String query2 = "INSERT INTO producto_pedido(idProducto, idPedido, articulos) VALUES(" + idProducto + "," + order.id + ", " + articulos + ");";
+            MySqlCommand cmd2 = new MySqlCommand(query2, m_connection);
+            cmd2.ExecuteNonQuery();
         }*/
     }
 }

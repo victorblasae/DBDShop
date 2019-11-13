@@ -35,10 +35,7 @@ namespace Tests
             Assert.IsTrue(products.Count == 3);
             products = client.getSoldOut();
             Assert.IsTrue(products.Count == 1);
-           // List<Order> orders = new List<Order>();
-            //client.addOrder("123456789S", 1, 3);
-            //orders = client.GetOrders();
-            //Assert.IsTrue(orders.Count == 1);
+           
 
         }
         [TestMethod]

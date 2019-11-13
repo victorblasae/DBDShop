@@ -23,7 +23,7 @@ namespace DBDShopLib
             this.nombre = nombre;
             this.apellidos = apellidos;
 
-            String query = "INSERT INTO Cliente values(DNI, nombre, apellidos)";
+           String query = "INSERT INTO Cliente values(DNI, nombre, apellidos)";
         }
     }
 }
